@@ -113,10 +113,7 @@ footer {
 .menu-title {
   flex: 1 1 auto;
   padding: 0 15px;
-  background-image: url("../assets/mobile/MUSIC.png");
-  background-repeat: no-repeat;
-  height: 100%;
-  background-position: center;
+  text-align: center;
 }
 
 .user {
@@ -137,6 +134,11 @@ footer {
 
 .label-container .item-name {
   margin-left: 25px;
+  color: #8B8E97;
+}
+
+.label-container .item-name:hover {
+  color: #E3556D;
 }
 
 .label-preview {

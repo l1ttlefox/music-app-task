@@ -87,8 +87,6 @@ export const ArtistPage = (props: RouteComponentProps) => {
         fetchData()
     }, [artistId])
 
-    console.log('albums', albums);
-
     return (
         <div className={'artist-info'}>
             <div className={'songs-list'}>

@@ -56,6 +56,8 @@ const customSearchStyles = {
     menu: (provided: any) => ({
         ...provided,
         background: '#181E30',
+        // boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.4)',
+        // borderRadius: '6px'
     }),
     placeholder: (provided: any) => ({
         ...provided,
@@ -65,6 +67,11 @@ const customSearchStyles = {
         ...provided,
         color: '#8B8E97'
     }),
+    option: (styles: any, { isFocused } : {isFocused: boolean}) => ({
+        ...styles,
+        backgroundColor: isFocused ? '' : '',
+        cursor: 'pointer'
+    })
 }
 
 const OptionLabel = ({ artist } : { artist: Artist }) => {
@@ -144,7 +151,11 @@ export const Container = ({children, history}: Props) => {
                 </div>
                 <div className={'mobile-header'}>
                     <div className={'mobile-menu'}></div>
-                    <div className={'menu-title'}></div>
+                    <div className={'menu-title'}>
+                        <Link to={'/'}>
+                            <img src={Music} alt='' />
+                        </Link>
+                    </div>
                     <div className={'user'}></div>
                 </div>
                 <div className={'column left'}>
