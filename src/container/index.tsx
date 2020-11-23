@@ -1,6 +1,6 @@
 import React from "react";
 import {Artist, musicService} from "../services/music.service";
-import {RouteComponentProps, Link} from "react-router-dom";
+import {RouteComponentProps, Link, NavLink } from "react-router-dom";
 import AsyncSelect from "react-select/async";
 import {components} from 'react-select';
 import {OptionTypeBase} from "react-select/src/types";
@@ -89,6 +89,13 @@ const OptionLabel = ({artist}: { artist: Artist }) => {
     )
 }
 
+const MenuItem = ({ menuItem }: {menuItem: SideMenuItem }) => <div className={'side-menu-item'}>
+    <div className={'side-menu-item_icon'}>
+        <img src={menuItem.icon} alt=''/>
+    </div>
+    <div className={'side-menu-item_title'}>{menuItem.title}</div>
+</div>
+
 const RightColumn = () => <div className={'column right'}>
     <div className={'aside-menu'}>
         <Link to={'/'}>
@@ -96,26 +103,21 @@ const RightColumn = () => <div className={'column right'}>
         </Link>
     </div>
     <div className={'aside-menu-list green'}>
-        {sideMenuItems[0].map((item: SideMenuItem) =>
-            <div className={'side-menu-item'} key={item.title}>
-                <div className={'side-menu-item_icon'}>
-                    <img src={item.icon} alt=''/>
-                </div>
-                <div className={'side-menu-item_title'}>{item.title}</div>
-            </div>
-        )}
+        {sideMenuItems[0].map((item: SideMenuItem) => {
+            return item.title.toLowerCase() === 'home' ?
+                <NavLink to={'/'} activeClassName={'is-active'} key={item.title} exact={true}>
+                    <MenuItem menuItem={item}  />
+                </NavLink> :
+                <MenuItem menuItem={item} key={item.title} />
+        }
+    )}
     </div>
     <div className={'aside-menu-list'}>
         <div className={'side-menu-item_title pink side-menu-title'}>
             YOUR LIBRARY
         </div>
         {sideMenuItems[1].map((item: SideMenuItem) =>
-            <div className={'side-menu-item'} key={item.title}>
-                <div className={'side-menu-item_icon'}>
-                    <img src={item.icon} alt=''/>
-                </div>
-                <div className={'side-menu-item_title'}>{item.title}</div>
-            </div>
+            <MenuItem menuItem={item} key={item.title} />
         )}
     </div>
     <div className={'aside-menu-list'}>
