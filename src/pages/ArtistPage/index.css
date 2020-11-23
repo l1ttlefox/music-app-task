@@ -1,0 +1,158 @@
+
+
+.artist-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.artist-info h3 {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.songs-list h3:after {
+    content: '...';
+    position: absolute;
+    right: 0;
+}
+
+.songs-list, .artist-info_preview {
+    display: flex;
+    flex-direction: column;
+    flex: 50%;
+    padding-right: 50px;
+    overflow: hidden;
+}
+
+.track-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: center;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.track-info {
+    flex: 1 1 auto;
+    padding: 0 15px;
+}
+
+.item-name {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+.item-artist {
+    font-size: 10px;
+    line-height: 11px;
+    color: #8B8E97;
+}
+
+.track-preview {
+    width: 48px;
+    height: 48px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.track-actions {
+    display: flex;
+}
+
+.track-actions div {
+    display: inline-flex;
+    align-items: center;
+}
+
+.track-actions div:nth-child(1) {
+    font-size: 12px;
+    line-height: 14px;
+    margin-right: 32px;
+}
+
+.artist-preview {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.artist-preview img {
+   width: 100%;
+}
+
+.artist-albums {
+    text-align: center;
+}
+
+.artist-albums .track-preview {
+    width: 88px;
+    height: 88px;
+}
+
+.artist-albums h3 {
+    font-size: 22px;
+    line-height: 25px;
+    background-image: url("../../assets/arrow-left.png"), url("../../assets/arrow-right.png");
+    background-repeat: no-repeat;
+    background-position: 97px 2px, 120px 2px;
+}
+
+.artist-albums h3:after {
+    content: '...';
+    position: absolute;
+    right: 0;
+}
+
+.albums_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.album-preview {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.album {
+    max-width: 88px;
+    margin-right: 10px;
+}
+
+.album .item-name {
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 1023px) {
+    .artist-info {
+        flex-direction: column-reverse;
+    }
+
+    .songs-list, .artist-info_preview {
+        padding-right: 0;
+    }
+
+    .artist-albums {
+        display: none;
+    }
+}

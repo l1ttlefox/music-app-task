@@ -1,0 +1,195 @@
+.Container {
+  background-color: #181E30;
+  min-height: 100vh;
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 96px;
+}
+
+main  {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  padding: 40px 0;
+  flex: 1 352px;
+  background-color: #0F152B;
+}
+
+.aside-menu {
+  margin-bottom: 100px;
+  padding: 15px 0 0 40px;
+}
+
+.side-menu-item_title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.green .side-menu-item_title{
+  color: #5ABC61;
+}
+
+.pink {
+  color: #E3556D;
+}
+
+.side-menu-title {
+  padding: 40px 0 16px 40px;
+}
+.side-menu-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 25px;
+  align-items: center;
+  padding: 12px 0 12px 40px;
+}
+
+.green .side-menu-item:first-child {
+  background: linear-gradient(90deg, rgba(90, 188, 97, 0.54) 0%, rgba(90, 188, 97, 0) 84.62%);
+}
+
+
+.side-menu-item_icon {
+  margin-right: 25px;
+}
+
+.side-menu-item_icon img {
+  width: 18px;
+}
+
+.aside-menu-bottom {
+  text-align: center;
+}
+
+.aside-menu-bottom img {
+  display: inline-block;
+}
+
+
+.left {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 352px);
+}
+
+footer {
+  position: absolute;
+  background-color: white;
+  background-image: url('../assets/Playbar.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 96px;
+  bottom: 0;
+}
+
+.mobile-header {
+  display: none;
+}
+
+.mobile-menu {
+  width: 24px;
+  height: 24px;
+  background-image: url("../assets/mobile/menu.png");
+}
+
+.menu-title {
+  flex: 1 1 auto;
+  padding: 0 15px;
+  background-image: url("../assets/mobile/MUSIC.png");
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+}
+
+.user {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url("../assets/User.png");
+}
+
+.label-container, .header-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  align-items: center;
+}
+
+.label-container .item-name {
+  margin-left: 25px;
+}
+
+.label-preview {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.label-preview img {
+  max-width: 100%;
+}
+
+.label-preview .track-preview {
+  width: 24px;
+  height: 24px;
+  border: none;
+}
+
+.search-container {
+  flex: 1;
+}
+
+.actions-container {
+  display: flex;
+  align-items: center;
+}
+.actions-container div {
+  margin-left: 35px;
+}
+
+@media screen and (max-width: 1023px) {
+  .right, .actions-container {
+    display: none;
+  }
+
+  .left {
+    flex: 1 1;
+  }
+
+  .mobile-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: center;
+    flex: 100%;
+    padding: 16px 40px;
+  }
+
+  footer {
+    background-image: url('../assets/mobile/Playbar.png');
+  }
+}
+

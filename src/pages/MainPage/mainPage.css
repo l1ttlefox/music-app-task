@@ -1,0 +1,31 @@
+.music {
+    padding-top: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 0;
+}
+
+.music img {
+    max-width: 100%;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.music-slider-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1023px) {
+    .music {
+        padding-top: 25px;
+    }
+    .music-slider-desktop {
+        display: none;
+    }
+
+    .music-slider-mobile {
+        display: block;
+    }
+}
