@@ -100,7 +100,7 @@ footer {
   bottom: 0;
 }
 
-.mobile-header {
+.mobile-header_wrapper {
   display: none;
 }
 
@@ -171,12 +171,20 @@ footer {
 }
 
 @media screen and (max-width: 1023px) {
+  main {
+    display: block;
+  }
   .right, .actions-container {
     display: none;
   }
 
   .left {
-    flex: 1 1;
+    display: block;
+    width: 100%;
+  }
+
+  .mobile-header_wrapper {
+    display: block;
   }
 
   .mobile-header {
